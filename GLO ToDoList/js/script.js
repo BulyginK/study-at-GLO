@@ -43,7 +43,7 @@ todoControl.addEventListener('submit', function (event) {
         text: headerInput.value,
         completed: false
     }
-
+    
     toDoData.push(newToDo);
     headerInput.value = "";
 
