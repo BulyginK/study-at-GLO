@@ -4,33 +4,39 @@
 // selector,height,width,bg,fontSize
 // selector, height, width, bg, fontSize, newElement
 
-const body = document.querySelector('body');
-
 const DomElement = function(selector, height, width, bg, fontSize) {
     this.selector = selector;
     this.height = height;
     this.width = width;
-    this.backgroundColor = bg;
+    this.background = bg;
     this.fontSize = fontSize;
     this.newElement = function() {
-        selector = prompt("Какой блок создать? .*** - div, #*** - paragraph", "");
+        this.selector = prompt("Какой блок создать? .*** - div, #*** - paragraph", "");
         let element = ''
-        if (selector[0] == '.') {
+        if (this.selector[0] == '.') {
             element = document.createElement('div');
-            element.className = selector.substring(1);
-            body.append(element);
-        } else if (selector[0] == '#') {
+            element.className = this.selector.substring(1);
+            document.querySelector('body').append(element);
+        } else if (this.selector[0] == '#') {
             element = document.createElement('p');
-            element.id= selector.substring(1);
-            body.append(element);
+            element.id= this.selector.substring(1);
+            document.querySelector('body').append(element);
         }
-        height = prompt("Какой ширины создать блок?", "");
-        console.log(height);
-
-        element.style.cssText = 'height: ' + height + ';';
+        this.height = +prompt("Какой высоты создать блок?", "");
+        element.style.cssText = 'height:'+this.height+'px;';
+        this.width = +prompt("Какой ширины создать блок?", "");
+        element.style.cssText += 'width:'+this.width+'px;';
+        this.background = prompt("Какого цвета фон блока?", "");
+        element.style.cssText += 'background:'+this.background+';';
+        this.fontSize = prompt("Какого размера шрифт в блоке?", "");
+        element.style.cssText += 'font-size:'+this.fontSize+'px;';
+        
+        document.querySelector('body').children[1].textContent = prompt("Какой текст вставить в блок?", "");
 
     }
 }
 
 const elem = new DomElement();
 elem.newElement();
+
+console.log(elem);
