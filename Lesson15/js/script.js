@@ -9,8 +9,10 @@ const DomElement = function(selector, height, width, bg, fontSize) {
 }
 
 DomElement.prototype.newElement = function() {
+    let element = '';
+    
     this.selector = prompt("Какой блок создать? .*** - div, #*** - paragraph", "");
-    let element = ''
+    
     if (this.selector[0] == '.') {
         element = document.createElement('div');
         element.className = this.selector.substring(1);
@@ -26,9 +28,8 @@ DomElement.prototype.newElement = function() {
     element.style.cssText += 'width:'+this.width+'px;';
     this.background = prompt("Какого цвета фон блока?", "");
     element.style.cssText += 'background:'+this.background+';';
-    this.fontSize = prompt("Какого размера шрифт в блоке?", "");
+    this.fontSize = +prompt("Какого размера шрифт в блоке?", "");
     element.style.cssText += 'font-size:'+this.fontSize+'px;';
-    
     document.querySelector('body').children[1].textContent = prompt("Какой текст вставить в блок?", "");
 }
 
