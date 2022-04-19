@@ -1,9 +1,5 @@
 'use strict';
 
-// 1) Создать функцию-конструктор DomElement, который содержит свойства
-// selector,height,width,bg,fontSize
-// selector, height, width, bg, fontSize, newElement
-
 const DomElement = function(selector, height, width, bg, fontSize) {
     this.selector = selector;
     this.height = height;
