@@ -44,12 +44,4 @@ function formatAMPM() {
     
 }
 formatAMPM()
-setInterval(formatAMPM, 500);
-
-  
-
-
-
-
-
-
+setInterval(formatAMPM, 500)
