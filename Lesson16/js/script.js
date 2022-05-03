@@ -18,3 +18,4 @@ class Second extends First {
 
 const second = new Second();
 second.hello();
+console.log(First);
