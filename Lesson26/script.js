@@ -7,23 +7,33 @@ const getData = (url) => {
         })
 }
 
-const sendData = (user) => {
-    return fetch('https://jsonplaceholder.typicode.com/posts', {
+const check = (user) => {
+    return new Promise((resolve, reject) => {
+        if (user) resolve(user)
+        else reject('Some error')
+    })
+}
+
+const sendData = (url, data = {}) => {
+    return fetch(url, {
         method: 'POST',
-        body: JSON.stringify(user),
+        body: data,
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         }
-    })
-        
+    }).then(response => response.json())
 }
 
-
 getData('db.json')
-    .then(user => sendData(user))
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => {
-        console.log(error);
-        alert('Error in setData')
-    })
+    .then(user => check(user))
+    .then(
+        user => {
+            sendData('https://jsonplaceholder.typicode.com/posts', JSON.stringify(user))
+                .then(data => console.log(data))
+                .catch(error => {
+                    console.log(error);
+                    alert('Error in setData')
+                })
+        },
+        error => { console.log(error); }
+    )
