@@ -21,19 +21,19 @@ const sendData = (url, data = {}) => {
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         }
-    }).then(response => response.json())
+    })
 }
 
 getData('db.json')
     .then(user => check(user))
     .then(
         user => {
-            sendData('https://jsonplaceholder.typicode.com/posts', JSON.stringify(user))
+            sendData('https://jsonplaceholder.typicode.com/posts', JSON.stringify(user))   
                 .then(data => console.log(data))
                 .catch(error => {
                     console.log(error);
-                    alert('Error in setData')
+                    alert('Error in setData');
                 })
         },
-        error => { console.log(error); }
+        error => { console.log(error) }
     )
