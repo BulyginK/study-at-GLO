@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Объекты</title>
+	<script src="./js/script.js" defer></script>
+</head>
+
+<body>
+
+	<header class="header">
+		<form class="object">
+			<select class="object__type" name="object-type" id="object-type">
+				<option value="">Вид имущества</option>
+				<option value="">Объект недвижимости</option>
+				<option value="">Транспортное средство</option>
+			</select>
+			<input class="object__realty-type" type="text" placeholder="Вид объекта">
+			<input class="object__realty-name" type="text" placeholder="Наименование объекта">
+			<input class="object__realty-purpose" type="text" placeholder="Назначение объекта">
+			<input class="object__realty-year" type="text" placeholder="Год строительства">
+			<input class="object__ts-group" type="text" placeholder="Группа объекта">
+			<input class="object__ts-brand" type="text" placeholder="Марка">
+			<input class="object__ts-model" type="text" placeholder="Модель">
+			<input class="object__ts-year" type="text" placeholder="Год выпуска">
+			<button class="" id="save-btn" type="submit">Сохранить</button>
+		</form>
+
+	</header>
+
+	<table>
+		<h3>Объекты недвижимости</h3>
+		<tr>
+			<td>№пп</td>
+			<td>Вид объекта недвижимости</td>
+			<td>Наименование</td>
+			<td>Назначение</td>
+			<td>Год строительства</td>
+		</tr>
+	</table>
+
+	<table>
+		<h3>Транспортные средства</h3>
+		<tr>
+			<td>№пп</td>
+			<td>Группа</td>
+			<td>Марка</td>
+			<td>Модель</td>
+			<td>Год выпуска</td>
+		</tr>
+	</table>
+
+
+</body>
+
+</html>
