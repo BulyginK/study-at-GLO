@@ -15,24 +15,37 @@
 	<header class="header">
 		<form class="object">
 			<select class="object__type" name="object-type" id="object-type">
-				<option value="">Вид имущества</option>
-				<option value="">Объект недвижимости</option>
-				<option value="">Транспортное средство</option>
+				<option value="" selected>Вид имущества</option>
+				<option value="realty">Объект недвижимости</option>
+				<option value="ts">Транспортное средство</option>
 			</select>
-			<input class="object__realty-type" type="text" placeholder="Вид объекта">
-			<input class="object__realty-name" type="text" placeholder="Наименование объекта">
-			<input class="object__realty-purpose" type="text" placeholder="Назначение объекта">
-			<input class="object__realty-year" type="text" placeholder="Год строительства">
-			<input class="object__ts-group" type="text" placeholder="Группа объекта">
-			<input class="object__ts-brand" type="text" placeholder="Марка">
-			<input class="object__ts-model" type="text" placeholder="Модель">
-			<input class="object__ts-year" type="text" placeholder="Год выпуска">
+			<div class="object__realty__basic">
+				<select class="object__realty__type" name="realty-type" id="realty-type">
+					<option value="" selected>Вид объекта</option>
+					<option value="building">Здание</option>
+					<option value="apartment">Квартира</option>
+					<option value="room">Помещение</option>
+				</select>
+				<input class="object__realty__name" type="text" placeholder="Наименование объекта" required>
+				<input class="object__realty__purpose" type="text" placeholder="Назначение объекта" required>
+				<input class="object__realty__year" type="text" placeholder="Год строительства" required>
+			</div>
+			<div class="object__realty__">
+				<input class="object__realty__kadnumber" type="text" placeholder="Кадастровый номер" required>
+				<input class="object__realty__area" type="text" placeholder="Площадь" required>
+			</div>
+
+
+			<input class="object__ts-group" type="text" placeholder="Группа объекта" required>
+			<input class="object__ts-brand" type="text" placeholder="Марка" required>
+			<input class="object__ts-model" type="text" placeholder="Модель" required>
+			<input class="object__ts-year" type="text" placeholder="Год выпуска" required>
 			<button class="" id="save-btn" type="submit">Сохранить</button>
 		</form>
 
 	</header>
 
-	<table>
+	<table class="tr__object__realty">
 		<h3>Объекты недвижимости</h3>
 		<tr>
 			<td>№пп</td>
@@ -40,10 +53,12 @@
 			<td>Наименование</td>
 			<td>Назначение</td>
 			<td>Год строительства</td>
+			<td>Кадастровый номер</td>
+			<td>Площадь</td>
 		</tr>
 	</table>
 
-	<table>
+	<table class="tr__object__auto">
 		<h3>Транспортные средства</h3>
 		<tr>
 			<td>№пп</td>
