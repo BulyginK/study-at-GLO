@@ -19,7 +19,7 @@
 				<option value="realty">Объект недвижимости</option>
 				<option value="ts">Транспортное средство</option>
 			</select>
-			<div class="object__realty__basic">
+			<div class="object__realty__basic" style="display: none">
 				<select class="object__realty__type" name="realty-type" id="realty-type">
 					<option value="" selected>Вид объекта</option>
 					<option value="building">Здание</option>
@@ -29,17 +29,19 @@
 				<input class="object__realty__name" type="text" placeholder="Наименование объекта" required>
 				<input class="object__realty__purpose" type="text" placeholder="Назначение объекта" required>
 				<input class="object__realty__year" type="text" placeholder="Год строительства" required>
+				<input class="object__realty__foto" type="checkbox" name="" id="checkbox-realty-foto">
+				<label for="checkbox-foto">Наличие фотографий</label>
 			</div>
-			<div class="object__realty__">
+			<div class="object__realty__data" style="display: none">
 				<input class="object__realty__kadnumber" type="text" placeholder="Кадастровый номер" required>
 				<input class="object__realty__area" type="text" placeholder="Площадь" required>
 			</div>
-
-
-			<input class="object__ts-group" type="text" placeholder="Группа объекта" required>
-			<input class="object__ts-brand" type="text" placeholder="Марка" required>
-			<input class="object__ts-model" type="text" placeholder="Модель" required>
-			<input class="object__ts-year" type="text" placeholder="Год выпуска" required>
+			<div class="object__ts__basic" style="display: none">
+				<input class="object__ts-group" type="text" placeholder="Группа объекта" required>
+				<input class="object__ts-brand" type="text" placeholder="Марка" required>
+				<input class="object__ts-model" type="text" placeholder="Модель" required>
+				<input class="object__ts-year" type="text" placeholder="Год выпуска" required>
+			</div>
 			<button class="" id="save-btn" type="submit">Сохранить</button>
 		</form>
 
@@ -53,8 +55,10 @@
 			<td>Наименование</td>
 			<td>Назначение</td>
 			<td>Год строительства</td>
+			<td>Наличие фото</td>
 			<td>Кадастровый номер</td>
 			<td>Площадь</td>
+			<td>Редактировать</td>
 		</tr>
 	</table>
 
@@ -65,7 +69,8 @@
 			<td>Группа</td>
 			<td>Марка</td>
 			<td>Модель</td>
-			<td>Год выпуска</td>
+			<td>Год выпуска</td>			
+			<td>Удалить</td>
 		</tr>
 	</table>
 

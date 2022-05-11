@@ -1,10 +1,12 @@
 'use strict';
 const saveBtn = document.querySelector('#save-btn');
 const objectType = document.querySelector('.object__type');
+const realtyBasic = document.querySelector('.object__realty__basic');
 const realtyType = document.querySelector('.object__realty__type');
 const realtyName = document.querySelector('.object__realty__name');
 const realtyPurpose = document.querySelector('.object__realty__purpose');
 const realtyYear = document.querySelector('.object__realty__year');
+const realtyFoto = document.querySelector('#checkbox-realty-foto');
 const realtyKadnumber = document.querySelector('.object__realty__kadnumber');
 const realtyArea = document.querySelector('.object__realty__area');
 const trObjectRealty = document.querySelector('.tr__object__realty');
@@ -29,21 +31,28 @@ class ObjectRealty extends Object {
 
 const newTr = () => {
     let newTr = document.createElement('tr');
-    count++;
     newTr.innerHTML =
-        `
-        <tr>
-            <td>${count}</td>
+        `<tr>
+            <td>${count++}</td>
             <td>${realtyType.options[realtyType.selectedIndex].textContent}</td>
             <td>${realtyName.value}</td>
             <td>${realtyPurpose.value}</td>
             <td>${realtyYear.value}</td>
+            <td>${realtyFoto.checked === true ? '+' : '-'}</td>
             <td>${realtyKadnumber.value}</td>
             <td>${realtyArea.value}</td>
-        </tr>
-        `;
+            <td><button>Удалить</button></td>
+        </tr>`;
     trObjectRealty.append(newTr);
 }
+
+objectType.addEventListener('change', () => {
+    if (objectType.options[objectType.selectedIndex].value === 'realty') {
+        realtyBasic.style.display = 'block'
+    } else if (objectType.options[objectType.selectedIndex].value === 'ts') {
+
+    }
+})
 
 saveBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -52,3 +61,4 @@ saveBtn.addEventListener('click', (e) => {
     newTr();
     console.log(objectRealty);
 });
+
