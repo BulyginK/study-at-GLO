@@ -19,30 +19,45 @@
 				<option value="realty">Объект недвижимости</option>
 				<option value="ts">Транспортное средство</option>
 			</select>
-			<div class="object__realty__basic" style="display: none">
-				<select class="object__realty__type" name="realty-type" id="realty-type">
-					<option value="" selected>Вид объекта</option>
-					<option value="building">Здание</option>
-					<option value="apartment">Квартира</option>
-					<option value="room">Помещение</option>
-				</select>
-				<input class="object__realty__name" type="text" placeholder="Наименование объекта" required>
-				<input class="object__realty__purpose" type="text" placeholder="Назначение объекта" required>
-				<input class="object__realty__year" type="text" placeholder="Год строительства" required>
-				<input class="object__realty__foto" type="checkbox" name="" id="checkbox-realty-foto">
-				<label for="checkbox-foto">Наличие фотографий</label>
-			</div>
-			<div class="object__realty__data" style="display: none">
-				<input class="object__realty__kadnumber" type="text" placeholder="Кадастровый номер" required>
-				<input class="object__realty__area" type="text" placeholder="Площадь" required>
-			</div>
-			<div class="object__ts__basic" style="display: none">
-				<input class="object__ts-group" type="text" placeholder="Группа объекта" required>
-				<input class="object__ts-brand" type="text" placeholder="Марка" required>
-				<input class="object__ts-model" type="text" placeholder="Модель" required>
-				<input class="object__ts-year" type="text" placeholder="Год выпуска" required>
-			</div>
 			<button class="" id="save-btn" type="submit">Сохранить</button>
+
+			<div class="object__realty__basic" style="display: none">
+				<div>
+					<select class="object__realty__type" name="realty-type" id="realty-type">
+						<option value="" selected>Вид объекта</option>
+						<option value="building">Здание</option>
+						<option value="apartment">Квартира</option>
+						<option value="room">Помещение</option>
+					</select>
+					<input class="object__realty__name" type="text" placeholder="Наименование" required>
+					<input class="object__realty__purpose" type="text" placeholder="Назначение объекта" required>
+					<input class="object__realty__year" type="text" placeholder="Год строительства" required>
+					<input class="object__realty__foto" type="checkbox" name="" id="checkbox-realty-foto">
+					<label for="checkbox-realty-foto">Наличие фотографий</label>
+				</div>
+
+				<div class="object__realty__data" style="display: none">
+					<input class="object__realty__kadnumber" type="text" placeholder="Кадастровый номер" required>
+					<input class="object__realty__area" type="text" placeholder="Площадь" required>
+				</div>
+
+			</div>
+
+			<div class="object__ts__basic" style="display: none">
+				<select class="object__ts__type" name="ts-type" id="ts-type">
+					<option value="" selected>Тип ТС</option>
+					<option value="passengercar">Легковые автомобили</option>
+					<option value="truck">Грузовые автомобили</option>
+					<option value="selfpropelledcar">Самоходные машины</option>
+				</select>
+				<input class="object__ts__name" type="text" placeholder="Наименование" required>
+				<input class="object__ts__brand" type="text" placeholder="Марка" required>
+				<input class="object__ts__model" type="text" placeholder="Модель" required>
+				<input class="object__ts__year" type="text" placeholder="Год выпуска" required>
+				<input class="object__ts__foto" type="checkbox" name="" id="checkbox-ts-foto">
+				<label for="checkbox-ts-foto">Наличие фотографий</label>
+			</div>
+
 		</form>
 
 	</header>
@@ -62,15 +77,17 @@
 		</tr>
 	</table>
 
-	<table class="tr__object__auto">
+	<table class="tr__object__ts">
 		<h3>Транспортные средства</h3>
 		<tr>
 			<td>№пп</td>
-			<td>Группа</td>
+			<td>Тип ТС</td>
+			<td>Наименование</td>
 			<td>Марка</td>
 			<td>Модель</td>
-			<td>Год выпуска</td>			
-			<td>Удалить</td>
+			<td>Год выпуска</td>
+			<td>Наличие фото</td>
+			<td>Редактировать</td>
 		</tr>
 	</table>
 
